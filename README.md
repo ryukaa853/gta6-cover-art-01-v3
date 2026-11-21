@@ -1,0 +1,52 @@
+# Vice Coast Cover Studio
+
+An offline browser web app that turns a person's photos and a caption into
+GTA-style cover art — the multi-panel poster look with bold caption lettering
+and a Vice City neon-sunset grade — exported as a PNG to share. Everything
+is original: no Rockstar Games logo, wordmark, official artwork, character
+or font.
+
+## What it does
+
+- **Any photo:** load up to three photos from your machine (file input —
+  photos are read locally and never uploaded), or use the two kit sample
+  photos. Click a panel to select it, drag to move its photo, scroll to
+  zoom, or use the sliders. One photo can fill every panel, or each panel
+  can show a different one.
+- **Four layouts:** Hero + Three, Four Panel grid, Full Bleed, and Three
+  Strips.
+- **Five colour grades:** Neon Sunset, Neon Nights, Vice Teal, Golden Hour,
+  and Noir — each a gradient-map style wash over the photos, plus grain and
+  a vignette.
+- **Caption:** edit the title and subtitle; three title styles (Solid,
+  Outline, Neon Glow). Lettering is Anton for the title and Pacifico for
+  the script subtitle, both SIL Open Font License files vendored under
+  `app/fonts/`.
+- **Fast export:** one click exports a PNG in 1080 x 1080, 1080 x 1350 or
+  1920 x 1080.
+
+## Run it
+
+Serve `app/` with any static file server and open `index.html` in desktop
+Chrome, for example:
+
+```sh
+python3 -m http.server 8080 --directory app
+```
+
+No network request is made at runtime: every script, font and image is a
+file under `app/`.
+
+## Entry plumbing
+
+`main.ts` (Node 22, standard library only) copies `app/` and `screenshots/`
+to `/output` and writes `/output/dossier.json` with the vendored
+`vendor/makefun-app.ts` library:
+
+```sh
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+```
+
+Screenshots live in `screenshots/`: the first by name is an exported wide
+cover, then the editor with photos loaded, then exported square and
+portrait covers.
