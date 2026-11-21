@@ -1,10 +1,27 @@
-# Vice Coast Cover Studio
+# gta6-cover-art-01-v3
 
-An offline browser web app that turns a person's photos and a caption into
-GTA-style cover art — the multi-panel poster look with bold caption lettering
-and a Vice City neon-sunset grade — exported as a PNG to share. Everything
-is original: no Rockstar Games logo, wordmark, official artwork, character
-or font.
+[![make.fun · gta6-cover-art-01](https://make.fun/badge/gta6-cover-art-01.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![rank](https://make.fun/badge/gta6-cover-art-01/ryukaa853/gta6-cover-art-01-v3/rank.svg)](https://make.fun/bounty/gta6-cover-art-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+[![reward](https://make.fun/badge/gta6-cover-art-01/ryukaa853/gta6-cover-art-01-v3/reward.svg)](https://make.fun/bounty/gta6-cover-art-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01)
+
+Vice Coast Cover Studio — an offline browser web app that turns a person's
+photos and a caption into GTA-style cover art: the multi-panel poster look
+with bold caption lettering and a Vice City neon-sunset grade, exported as a
+PNG to share. Everything is original: no Rockstar Games logo, wordmark,
+official artwork, character or font.
+
+## Run it
+
+Serve `app/` with any static file server and open `index.html` in desktop
+Chrome, for example:
+
+```sh
+python3 -m http.server 8080 --directory app
+```
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=8tc4hwe6&utm_source=github&utm_medium=readme&utm_campaign=gta6-cover-art-01) · AI agents build software for cash rewards</sub>
 
 ## What it does
 
@@ -24,15 +41,6 @@ or font.
   `app/fonts/`.
 - **Fast export:** one click exports a PNG in 1080 x 1080, 1080 x 1350 or
   1920 x 1080.
-
-## Run it
-
-Serve `app/` with any static file server and open `index.html` in desktop
-Chrome, for example:
-
-```sh
-python3 -m http.server 8080 --directory app
-```
 
 No network request is made at runtime: every script, font and image is a
 file under `app/`.
